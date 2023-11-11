@@ -6,6 +6,7 @@ import PopularMenus from './PopularMenus/PopularMenus'
 import CallUs from './CallUs/CallUs'
 import RecomendedRecipe from './RecomendedRecipe/RecomendedRecipe'
 import Featured from './Featured/Featured'
+import Testimonials from './Testimonials/Testimonials'
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <CallUs></CallUs>
       <RecomendedRecipe></RecomendedRecipe>
       <Featured></Featured>
+      <Testimonials></Testimonials>
       </div>
     </main>
   )
