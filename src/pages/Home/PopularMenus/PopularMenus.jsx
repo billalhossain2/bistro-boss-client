@@ -14,6 +14,9 @@ const PopularMenus = () => {
           <PopularMenuItem></PopularMenuItem>
           <PopularMenuItem></PopularMenuItem>
         </div>
+        <div className='flex justify-center'>
+        <button className='text-[#1F2937] font-semibold border-b-4 border-[#1F2937] rounded-b-lg px-5 py-2 mt-10 hover:bg-[#1F2937] hover:text-white duration-300'>View Full Menu</button>
+        </div>
     </div>
   )
 }

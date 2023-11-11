@@ -3,6 +3,7 @@ import Banner from './Banner/Banner'
 import Category from './Category/Category'
 import BistroBossBox from './BistroBossBox/BistroBossBox'
 import PopularMenus from './PopularMenus/PopularMenus'
+import CallUs from './CallUs/CallUs'
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Category></Category>
       <BistroBossBox></BistroBossBox>
       <PopularMenus></PopularMenus>
+      <CallUs></CallUs>
       </div>
     </main>
   )
