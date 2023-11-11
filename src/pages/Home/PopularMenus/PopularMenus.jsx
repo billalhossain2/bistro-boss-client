@@ -6,7 +6,7 @@ const PopularMenus = () => {
   return (
     <section className='mb-20'>
         <SectionTitle subHeading="---Check it out---" heading="FROM OUR MENU"></SectionTitle>
-        <div className='grid md:grid-cols-2 gird-cols-1 gap-5'>
+        <div className='md:grid md:grid-cols-2 gird-cols-1 gap-5'>
           <PopularMenuItem></PopularMenuItem>
           <PopularMenuItem></PopularMenuItem>
           <PopularMenuItem></PopularMenuItem>

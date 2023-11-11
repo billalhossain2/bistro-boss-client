@@ -5,6 +5,7 @@ import BistroBossBox from './BistroBossBox/BistroBossBox'
 import PopularMenus from './PopularMenus/PopularMenus'
 import CallUs from './CallUs/CallUs'
 import RecomendedRecipe from './RecomendedRecipe/RecomendedRecipe'
+import Featured from './Featured/Featured'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <PopularMenus></PopularMenus>
       <CallUs></CallUs>
       <RecomendedRecipe></RecomendedRecipe>
+      <Featured></Featured>
       </div>
     </main>
   )
