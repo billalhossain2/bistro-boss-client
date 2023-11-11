@@ -19,7 +19,7 @@ const Category = () => {
     const sliderImages = [slide1, slide2, slide3, slide4, slide5]
   return (
     
-    <div>
+    <section>
        <SectionTitle subHeading="---From 11:00am to 10:00pm---" heading="ORDER ONLINE"></SectionTitle>
     <Swiper
       slidesPerView={4}
@@ -38,7 +38,7 @@ const Category = () => {
         sliderImages.map(sliderImg => <SwiperSlide><img src={sliderImg} alt="Slide Image" /></SwiperSlide>)
       }
     </Swiper>
-  </div>
+  </section>
   )
 }
 
