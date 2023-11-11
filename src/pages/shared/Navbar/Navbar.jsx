@@ -47,6 +47,7 @@ const Navbar = () => {
           </li>
         </ul>
     </div>
+    <MobileMenu></MobileMenu>
     </div>
   );
 };
