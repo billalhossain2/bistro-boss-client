@@ -6,10 +6,10 @@ import logo from "../../../assets/logo.png"
 
 const Navbar = () => {
   return (
-    <>
-      <div className="md:flex items-center hidden">
-      <div className="flex-1">
+    <div className="relative">
+      <div className="fixed z-50 md:flex items-center bg-black bg-opacity-50  hidden text-white lg:w-[95%] md:w-[100%] p-5">
       
+          <div className="flex-1">
           <div className="flex items-center gap-3">
           <NavLink className="uppercase">
           <img className="w-16 h-16" src={logo} alt="Logo" />
@@ -20,7 +20,8 @@ const Navbar = () => {
           <p>Restaurant</p>
           </div>
           </div>
-      </div>
+          </div>
+
 
         <ul className="flex gap-5">
           <li>
@@ -46,8 +47,7 @@ const Navbar = () => {
           </li>
         </ul>
     </div>
-    <MobileMenu></MobileMenu>
-    </>
+    </div>
   );
 };
 
