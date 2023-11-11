@@ -32,7 +32,7 @@ const Category = () => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay, Pagination]}
-      className="mySwiper md:max-w-[80%] mx-auto mb-20"
+      className="mySwiper mb-20"
     >
       {
         sliderImages.map(sliderImg => <SwiperSlide><img src={sliderImg} alt="Slide Image" /></SwiperSlide>)
