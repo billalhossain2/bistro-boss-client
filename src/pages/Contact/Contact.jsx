@@ -30,7 +30,7 @@ const Contact = () => {
     },
   ]
   return (
-    <div className="mb-20">
+    <div className="mb-20 px-3">
        <Cover title="CONTACT US" description="Would you like to try a dish?" coverImg={bannerImg}></Cover>
        <SectionTitle subHeading="---Visit Us---" heading="OUR LOCATION"></SectionTitle>
        <div className="grid md:grid-cols-3 gap-5 mb-20">   
