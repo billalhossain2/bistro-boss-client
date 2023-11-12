@@ -1,7 +1,7 @@
 import salad from "../../../assets/menu/salad-bg.jpg"
 
-const RecipeCard = ({item}) => {
-  const {name, recipe, image} = item || {};
+const RecipeCard = ({salad}) => {
+  const {name, recipe, image} = salad || {};
   return (
     <div className="card bg-[#F3F3F3] shadow-xl border-[1px] border-[#bb85062d]">
   <figure className="px-10 pt-10">
