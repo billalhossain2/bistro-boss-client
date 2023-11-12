@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import img from "../../assets/others/authentication2.png"
 import bg from "../../assets/others/authentication.png"
 import {BiLogoFacebook, BiLogoGoogle, BiLogoGithub} from "react-icons/bi"
+import { Helmet } from "react-helmet"
 const Login = () => {
   return (
     <div style={
@@ -13,6 +14,9 @@ const Login = () => {
     }
     className="pb-10 mb-20 pt-40 flex justify-center items-center px-5"
     >
+      <Helmet>
+       <title>Login | Bistro Boss</title>
+       </Helmet>
       <div className="flex lg:flex-row flex-col items-center justify-center border-2 border-gray-300 rounded-md shadow-xl px-5 py-10">
       <div>
         <img className="lg:w-[60%] w-full" src={img} alt="Login Image" />

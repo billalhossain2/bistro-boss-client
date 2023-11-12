@@ -8,6 +8,7 @@ import {TiLocationOutline} from "react-icons/ti"
 import {BsFillTelephoneOutboundFill} from "react-icons/bs"
 import {Ri24HoursLine} from "react-icons/ri"
 import ContactForm from "./ContactForm"
+import { Helmet } from "react-helmet"
 const Contact = () => {
   const contacts = [
     {
@@ -31,6 +32,9 @@ const Contact = () => {
   ]
   return (
     <div className="mb-20 px-3">
+      <Helmet>
+       <title>Contact | Bistro Boss</title>
+       </Helmet>
        <Cover title="CONTACT US" description="Would you like to try a dish?" coverImg={bannerImg}></Cover>
        <SectionTitle subHeading="---Visit Us---" heading="OUR LOCATION"></SectionTitle>
        <div className="grid md:grid-cols-3 gap-5 mb-20">   

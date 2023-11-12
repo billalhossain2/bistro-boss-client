@@ -3,9 +3,14 @@ import "react-tabs/style/react-tabs.css";
 import useMenuFilter from "../../hooks/useMenuFilter";
 import useMenu from "../../hooks/useMenu";
 import RecipeCard from "../shared/RecipeCard/RecipeCard";
+import { useState } from "react";
 
-const CategoryTabs = () => {
+const CategoryTabs = ({category}) => {
   const [loading, error, menus] = useMenu();
+  const tabs = ["salad", "pizza", "soup", "dessert", "drinks"];
+  const initialIndex = tabs.indexOf(category)
+
+  const [tabIndex, setTabIndex] = useState(initialIndex);
 
   const salads = useMenuFilter(menus, "salad");
   const pizzas = useMenuFilter(menus, "pizza");
@@ -13,11 +18,11 @@ const CategoryTabs = () => {
   const deserts = useMenuFilter(menus, "dessert");
   const drinks = useMenuFilter(menus, "drinks");
 
-  const tabs = ["salad", "pizza", "soups", "desserts", "drinks"];
+
 
   return (
     <div className="mb-20">
-      <Tabs defaultIndex="0">
+      <Tabs defaultIndex={tabIndex}>
         <TabList>
           {tabs.map((tab, index) => (
             <Tab key={index}>{tab.toUpperCase()}</Tab>
