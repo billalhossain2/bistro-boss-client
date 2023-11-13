@@ -46,7 +46,7 @@ var styles = {
     background: "rgba(0, 0, 0, 0.3)",
   },
 };
-const MobileMenu = () => {
+const MobileMenu = ({photoURL, displayName, handleSignOut}) => {
   const showSettings = (e) => {
     e.preventDefault();
     alert();
@@ -104,6 +104,18 @@ const MobileMenu = () => {
             Settings
           </NavLink>
         </p>
+
+        <p>
+            <button className="px-5 py-2 bg-[] text-white border-[1px] border-[#D1A054] hover:bg-[#D1A054] duration-300 rounded-md">Login</button>
+          </p>
+          <p>
+            <NavLink to="/user">
+              <img className="w-10 h-10 rounded-full" src={photoURL} alt="" />
+            </NavLink>
+          </p>
+          <p>
+            <button onClick={handleSignOut} className="px-5 py-2 bg-[] text-white border-[1px] border-[#D1A054] hover:bg-[#D1A054] duration-300 rounded-md">Logout</button>
+          </p>
       </Menu>
     </div>
   );

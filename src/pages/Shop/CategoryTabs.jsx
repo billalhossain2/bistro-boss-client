@@ -17,6 +17,7 @@ const CategoryTabs = ({category}) => {
   const soups = useMenuFilter(menus, "soup");
   const deserts = useMenuFilter(menus, "dessert");
   const drinks = useMenuFilter(menus, "drinks");
+  console.log("our shop page data============> ", salads, pizzas)
 
 
 

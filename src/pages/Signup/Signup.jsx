@@ -2,11 +2,25 @@ import img from "../../assets/others/authentication2.png";
 import bg from "../../assets/others/authentication.png";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
+import { useContext } from "react";
+import { authContext } from "../../providers/AuthProvider";
+import { toast } from "react-toastify";
 const Signup = () => {
   const {register, handleSubmit, formState:{errors}} = useForm()
-  const onSubmit = (data)=>{
+
+  const {user, signUpWithEmailPwd, updateUserProfile, signOutUser} = useContext(authContext);
+  //Pwd: billalHossain$76
+
+  const onSubmit = async(data)=>{
     const {name, photoUrl, email, password} = data;
-    alert('Signup Now........')
+    try {
+      const signUpResponse = await signUpWithEmailPwd(email, password)
+      const updateResponse = await updateUserProfile(name, photoUrl);
+      console.log(signUpResponse)
+      toast.success('Signup was successful!', {autoClose:1000})
+    } catch (error) {
+      toast.error(error.message, {autoClose:1000})
+    }
   }
   return (
     <div

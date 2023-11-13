@@ -1,11 +1,12 @@
 import salad from "../../../assets/menu/salad-bg.jpg"
 
-const RecipeCard = ({salad}) => {
-  const {name, recipe, image} = salad || {};
+const RecipeCard = ({item}) => {
+  const {name, recipe, image} = item || {};
+  console.log("Recipe card page=======> ", item)
   return (
     <div className="card bg-[#F3F3F3] shadow-xl border-[1px] border-[#bb85062d]">
   <figure className="px-10 pt-10">
-    <img src={image} alt="Chef Recomended Recipe" className="rounded-xl" />
+    <img src={image} alt="Recipe Image Not Found" className="rounded-xl" />
   </figure>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{name}</h2>

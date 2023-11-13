@@ -1,17 +1,23 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import img from "../../assets/others/authentication2.png"
 import bg from "../../assets/others/authentication.png"
 import {BiLogoFacebook, BiLogoGoogle, BiLogoGithub} from "react-icons/bi"
 import { Helmet } from "react-helmet"
 
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 import { useForm } from "react-hook-form"
+import { authContext } from "../../providers/AuthProvider"
+import { toast } from "react-toastify"
 
 const Login = () => {
   const { register, handleSubmit, formState:{errors} } = useForm()
  const [disabled, setDisabled] = useState(true)
+
+ const {user, signInWithGoogle, signInEmailPwd} = useContext(authContext);
+ const navigate = useNavigate()
+
   useEffect(()=>{
     loadCaptchaEnginge(6);
   }, [])
@@ -28,7 +34,25 @@ const Login = () => {
 
   const onSubmit = (data)=>{
     const {email, password} = data;
-    alert("Login Now")
+    signInEmailPwd(email, password)
+    .then(()=>{
+      toast.success("Login success!", {autoClose:1000})
+      navigate("/")
+    })
+    .catch(error=>{
+      toast.error(error.message, {autoClose:1000})
+    })
+  }
+
+  const handleGoogleLogin = ()=>{
+    signInWithGoogle()
+    .then(()=>{
+      toast.success("Login success!", {autoClose:1000})
+      navigate("/")
+    })
+    .catch((error)=>{
+      toast.error(error.message, {autoClose:1000})
+    })
   }
 
 
@@ -77,7 +101,7 @@ const Login = () => {
       <p className="font-bold">Or sign in with</p>
       <div className="flex gap-5 text-5xl">
         <BiLogoFacebook className="border-2 border-gray-800 cursor-pointer duration-300  rounded-full p-1 hover:bg-gray-800 hover:text-white"></BiLogoFacebook>
-        <BiLogoGoogle className="border-2 border-gray-800 cursor-pointer duration-300  rounded-full p-1 hover:bg-gray-800 hover:text-white"></BiLogoGoogle>
+        <BiLogoGoogle onClick={handleGoogleLogin} className="border-2 border-gray-800 cursor-pointer duration-300  rounded-full p-1 hover:bg-gray-800 hover:text-white"></BiLogoGoogle>
         <BiLogoGithub className="border-2 border-gray-800 cursor-pointer duration-300  rounded-full p-1 hover:bg-gray-800 hover:text-white"></BiLogoGithub>
       </div>
       </div>
